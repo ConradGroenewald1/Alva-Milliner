@@ -6,11 +6,25 @@
 <title>Web Design Project</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="css/style.css" />
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-
 <script type="text/javascript" src="js/main.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Antic' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript">
+function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x==null || x=="") {
+        alert("PLease enter your full name");
+        return false;
+    }
+    var x = document.forms["myForm"]["email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("PLease enter a valid email address");
+        return false;
+    }
+}
+</script>
 </head>
 
 <body id="contact-bg">
@@ -34,31 +48,31 @@
 
 <div id="contactForm" class="fadeInRightBig">
 
-	<form id="mainForm" method="post" action="">
+	<form name="myForm" action="demo_form.asp" onsubmit="return validateForm()" method="post">
         <h1>Get in Touch!</h1>
             <h2>Feel free to contact me by phone on <a href="tel:+353868215271" rel:"external">+353868215271</a></h2>
 
-        <div class="form-group">
-    <label for="exampleInputPassword1">Full Name</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Please enter your full name">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter a valid email address">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">How can I help?</label>
-    <textarea class="form-control" rows="5" maxlength="300" placeholder="What is the occassion?"></textarea>
-  </div>
+  <label>Full Name:*</label>
+  <div class="valHidden" id="fnameVal">Please enter your full name</div>
+  <input type="text" name="fname" placeholder="Please fill in your full name">
   
+
+
+  <label>Email:*</label>
+   <div class="valHidden" id="emailVal">Please enter a valid email address</div>
+  <input type="text" name="email" placeholder="Please enter a valid email address">
   
-  <input type="submit" value="Submit" id="button" class="btn btn-default">
+
+  <label>How can I help?</label>
+  <textarea maxlength="200" placeholder="max 200 Characters">
+  
+  </textarea>
+
+<input id="button" type="submit" value="Submit">
 </form>
 
 </div>
 
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </body>
 </html>
