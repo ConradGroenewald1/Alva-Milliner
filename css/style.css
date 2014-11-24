@@ -8,7 +8,6 @@ body{
 .container{
     width: 100%;
     height: 100%;
-    margin: 0 auto;
 }
 
 /*==================================
@@ -770,6 +769,9 @@ word animation ends
     background: rgba(51,51,255, 0.6);
     border: solid 2px rgba(225,0,118,0.6);
     color: #ececec;
+}
+.valHidden{
+  display: none;
 }
 
 /*media queries*/
