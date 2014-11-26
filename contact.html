@@ -11,6 +11,23 @@
 
 <script type="text/javascript" src="js/main.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Antic' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript">
+  function validateName(){
+    var name = document.getElementById("firstName").value;
+      if(name.length == 0){
+        producePrompt("Name is reequired", "firstNamePrompt", "red");
+        return false;
+      }
+  }
+
+  function producePrompt(message, promptLocation, color){
+    document.getElementById(promptLocation).innerHTML = message;
+    document.getElementById(propmtLocation).style.color = color;
+  }
+</script>
+
+
 </head>
 
 <body id="contact-bg">
@@ -40,11 +57,11 @@
 
         
     <label>Full Name</label>
-    <p><input type="firstName" name="firstName" id="" placeholder="Please enter your full name"><span>Error</span></p>
+    <p><input type="firstName" onkeyup="validateName()" id="firstName" placeholder="Please enter your full name"><span id="firstNamePrompt"></span></p>
  
   
     <label>Email address</label>
-    <p><input type="email"  id="" placeholder="Enter a valid email address"><span>Error</span></p>
+    <p><input type="email"  id="email" placeholder="Enter a valid email address"><span id="emailPrompt"></span></p>
   
   
     <label>How can I help?</label>
