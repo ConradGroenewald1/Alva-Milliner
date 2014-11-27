@@ -593,7 +593,15 @@ word animation ends
     display: table-cell;
     vertical-align: middle;
     transform: scale(0.2);
+    -webkit-transform: scale(0.2);
+    -moz-transform: scale(0.2);
+    -o-transform: scale(0.2);
+    -ms-transform: scale(0.2);
     transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    -ms-transition: all 0.25s;
 }
 
 #lightbox .title::before {
@@ -613,6 +621,10 @@ word animation ends
 }
 #lightbox li:hover .title {
    transform: scale(1);
+   -webkit-transform: scale(1);
+   -moz-transform: scale(1);
+   -o-transform: scale(1);
+   -ms-transform: scale(1);
 }
 
 .lb_backdrop {
