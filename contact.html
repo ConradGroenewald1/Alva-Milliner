@@ -13,18 +13,49 @@
 <link href='http://fonts.googleapis.com/css?family=Antic' rel='stylesheet' type='text/css'>
 
 <script type="text/javascript">
-  function validateName(){
+  function validateName()
+  {
     var name = document.getElementById("firstName").value;
-      if(name.length == 0){
+      if(name.length == 0)
+      {
         producePrompt("Name is Required", "firstNamePrompt", "red");
         return false;
       }
+      if(!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)){
+        producePrompt("First and Last Name Please", "firstNamePrompt", "red");
+        return false;
+      }
+       producePrompt("Welcome "+ name, "firstNamePrompt", "green");
+       return true;
   }
 
-  function producePrompt(message, promptLocation, color){
+  function validateEmail()
+  {
+    var email = document.getElementById("email").value;
+
+    if(email.length == 0)
+    {
+      producePrompt("Email is required", "emailPrompt", "red");
+      return false;
+    }
+    if(!email.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/))
+    {
+      producePrompt("Email address invalid" , "emailPrompt", "red");
+      return false;
+    }
+
+    producePrompt("Valid Email Address", "emailPrompt", "green");
+    return true;
+
+  }
+
+  function producePrompt(message, promptLocation, color)
+  {
     document.getElementById(promptLocation).innerHTML = message;
     document.getElementById(propmtLocation).style.color = color;
   }
+
+
 </script>
 
 
@@ -61,7 +92,7 @@
  
   
     <label>Email address</label>
-    <p><input type="email"  id="email" placeholder="Enter a valid email address"><span id="emailPrompt"></span></p>
+    <p><input type="email"  onkeyup="validateEmail()" id="email" placeholder="Enter a valid email address"><span id="emailPrompt"></span></p>
   
   
     <label>How can I help?</label>
