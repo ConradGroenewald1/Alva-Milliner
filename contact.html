@@ -6,57 +6,8 @@
 <title>Web Design Project</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="css/style.css" />
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-
-<script type="text/javascript" src="js/main.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Antic' rel='stylesheet' type='text/css'>
 
-<script type="text/javascript">
-  function validateName()
-  {
-    var name = document.getElementById("firstName").value;
-      if(name.length == 0)
-      {
-        producePrompt("Name is Required", "firstNamePrompt", "red");
-        return false;
-      }
-      if(!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)){
-        producePrompt("First and Last Name Please", "firstNamePrompt", "red");
-        return false;
-      }
-       producePrompt("Welcome "+ name, "firstNamePrompt", "green");
-       return true;
-  }
-
-  function validateEmail()
-  {
-    var email = document.getElementById("email").value;
-
-    if(email.length == 0)
-    {
-      producePrompt("Email is required", "emailPrompt", "red");
-      return false;
-    }
-    if(!email.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/))
-    {
-      producePrompt("Email address invalid" , "emailPrompt", "red");
-      return false;
-    }
-
-    producePrompt("Valid Email Address", "emailPrompt", "green");
-    return true;
-
-  }
-
-  function producePrompt(message, promptLocation, color)
-  {
-    document.getElementById(promptLocation).innerHTML = message;
-    document.getElementById(propmtLocation).style.color = color;
-  }
-
-
-</script>
 
 
 </head>
@@ -86,27 +37,30 @@
         <h1>Get in Touch!</h1>
             <h2>Feel free to contact me by phone on <a href="tel:+353868215271" rel:"external">+353868215271</a></h2>
 
-        
-    <label>Full Name</label>
-    <p><input type="firstName" onkeyup="validateName()" id="firstName" placeholder="Please enter your full name"><span id="firstNamePrompt"></span></p>
- 
+    <div class="inputs">  
+      <label>Full Name*</label>
+        <input type="text" onkeyup="validateName()" id="fullName" placeholder="Please enter your full name">
+        <span id="fullNamePrompt"></span>
+    </div>
   
-    <label>Email address</label>
-    <p><input type="email"  onkeyup="validateEmail()" id="email" placeholder="Enter a valid email address"><span id="emailPrompt"></span></p>
-  
-  
-    <label>How can I help?</label>
-    <textarea  rows="5" maxlength="300" placeholder="What is the occassion?"></textarea>
-  
-  
-  
-  <input type="submit" value="Submit" id="button" class="btn btn-default">
-</form>
+    <div class="inputs"> 
+      <label>Email address*</label>
+        <input type="text"  onkeyup="validateEmail()" id="email" placeholder="Enter a valid email address">
+      <span id="emailPrompt"></span>
+    </div>
+    
+    <div class="inputs"> 
+      <label>How can I help?</label>
+      <textarea  rows="5" maxlength="300" placeholder="What is the occassion?"></textarea>
+    </div>
 
+  </form>
+
+    <button onclick="ValidateForm()">Submit Form</button>
+    <span id="commentPrompt"></span>
 </div>
 
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
