@@ -125,14 +125,14 @@ function validateName()
     var name = document.getElementById("fullName").value;
       if(name.length == 0)
       {
-        producePrompt("Name is Required", "fullNamePrompt", "red");
+        producePrompt("Name is Required", "fullNamePrompt", "#FF4940");
         return false;
       }
       if(!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)){
-        producePrompt("First and Last Name Please", "fullNamePrompt", "red");
+        producePrompt("First and Last Name Please", "fullNamePrompt", "#FF4940");
         return false;
       }
-       producePrompt("Welcome "+ name, "fullNamePrompt", "green");
+       producePrompt("Welcome "+ name, "fullNamePrompt", "#00DA1B");
        return true;
   }
 
@@ -144,16 +144,16 @@ function validateName()
 
     if(email.length == 0)
     {
-      producePrompt("Email is required", "emailPrompt", "red");
+      producePrompt("Email is required", "emailPrompt", "#FF4940");
       return false;
     }
     if(!email.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/))
     {
-      producePrompt("Email address invalid" , "emailPrompt", "red");
+      producePrompt("Email address invalid" , "emailPrompt", "#FF4940");
       return false;
     }
 
-    producePrompt("Valid Email Address", "emailPrompt", "green");
+    producePrompt("Valid Email Address", "emailPrompt", "#00DA1B");
     return true;
 
   }
@@ -164,8 +164,8 @@ function ValidateForm()
   if(!validateName() || !validateEmail())
   {
     jsShow("commentPrompt");
-    producePrompt("Form Must Be Valid To Submit", "commentPrompt", "red");
-    setTimeOut(function(){jsHide("commentPrompt");}, 2000);
+    producePrompt("Form Must Be Valid To Submit", "commentPrompt", "#FF4940");
+    setTimeout(function(){jsHide("commentPrompt");}, 2000);
   }
 }
 
