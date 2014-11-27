@@ -116,3 +116,75 @@ $(document).ready(function(){
   }
 });
 
+
+//form validation script
+
+//full name validation
+function validateName()
+  {
+    var name = document.getElementById("fullName").value;
+      if(name.length == 0)
+      {
+        producePrompt("Name is Required", "fullNamePrompt", "red");
+        return false;
+      }
+      if(!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)){
+        producePrompt("First and Last Name Please", "fullNamePrompt", "red");
+        return false;
+      }
+       producePrompt("Welcome "+ name, "fullNamePrompt", "green");
+       return true;
+  }
+
+
+//Email validation
+  function validateEmail()
+  {
+    var email = document.getElementById("email").value;
+
+    if(email.length == 0)
+    {
+      producePrompt("Email is required", "emailPrompt", "red");
+      return false;
+    }
+    if(!email.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/))
+    {
+      producePrompt("Email address invalid" , "emailPrompt", "red");
+      return false;
+    }
+
+    producePrompt("Valid Email Address", "emailPrompt", "green");
+    return true;
+
+  }
+
+//submit validation
+function ValidateForm()
+{
+  if(!validateName() || !validateEmail())
+  {
+    jsShow("commentPrompt");
+    producePrompt("Form Must Be Valid To Submit", "commentPrompt", "red");
+    setTimeOut(function(){jsHide("commentPrompt");}, 2000);
+  }
+}
+
+
+  function jsShow(id)
+  {
+    document.getElementById(id).style.display = "block";
+  }
+
+  function jsHide(id)
+  {
+    document.getElementById(id).style.display = "none";
+  }
+
+
+  function producePrompt(message, promptLocation, color)
+  {
+    document.getElementById(promptLocation).innerHTML = message;
+    document.getElementById(promptLocation).style.color = color;
+  }
+
+
