@@ -57,6 +57,9 @@ body{
     -o-background-size: cover;
     background-size: cover;
 }
+#press-bg{
+    background: rgba(255,255,255,0.5);
+}
 
 
 /* index page */
@@ -474,12 +477,16 @@ word animation ends
      PRESS SECTION
 ============================*/     
 .press{
-    background: rgba(64,64,64,0.9);
+    background-image: url("../img/dark_wood.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     border-radius: 15px;
     width:60%;
     height:auto;
     padding: 0 40px;
-    display: inline-block;
     margin: 20px 20px 50px 20px;
     text-align: justify;
     float: left;
