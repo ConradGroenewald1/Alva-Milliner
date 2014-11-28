@@ -58,13 +58,13 @@ body{
     background-size: cover;
 }
 #press-bg{
-    background: rgba(255,255,255,0.5);
+    background: #37DE6A;
 }
 
 
 /* index page */
 /*===================
-navigation starts
+NAVIGATION 
 ===================*/
 .logo {
     height: 0;
@@ -304,12 +304,9 @@ nav a:hover{ position: relative; bottom: 7px;}
     100% {width:100%;}
 }
 
-/*==================
-navigation ends
-===================*/
 
 /*===================
-word animation starts
+WORD ANIMATION
 =====================*/
 
 .slideshow li{
@@ -468,9 +465,6 @@ word animation starts
 .no-cssanimations .slideshow li span{
     opacity: 1;
 }
-/*===================
-word animation ends
-=====================*/
 
 
 /*===========================
@@ -793,7 +787,9 @@ button:hover{
   display: none;
 }
 
-/*media queries*/
+/*==========================
+    MEDIA QUERIES
+===========================*/    
 
 @media screen and (max-width: 768px){
 /* index page */
