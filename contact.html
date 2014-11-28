@@ -6,10 +6,32 @@
 <title>Web Design Project</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="css/style.css" />
+<<<<<<< HEAD
 <link href='http://fonts.googleapis.com/css?family=Antic' rel='stylesheet' type='text/css'>
 
 
 
+=======
+<script type="text/javascript" src="js/main.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Antic' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript">
+function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x==null || x=="") {
+        alert("PLease enter your full name");
+        return false;
+    }
+    var x = document.forms["myForm"]["email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("PLease enter a valid email address");
+        return false;
+    }
+}
+</script>
+>>>>>>> f06ddbe98578111c85bd958cdf8ad255f83607c3
 </head>
 
 <body id="contact-bg">
@@ -33,10 +55,11 @@
 
 <div id="contactForm" class="fadeInRightBig">
 
-	<form id="mainForm" method="post" action="">
+	<form name="myForm" action="demo_form.asp" onsubmit="return validateForm()" method="post">
         <h1>Get in Touch!</h1>
             <h2>Feel free to contact me by phone on <a href="tel:+353868215271" rel:"external">+353868215271</a></h2>
 
+<<<<<<< HEAD
     <div class="inputs">  
       <label>Full Name*</label>
         <input type="text" onkeyup="validateName()" id="fullName" placeholder="Please enter your full name">
@@ -53,6 +76,26 @@
       <label>How can I help?</label>
       <textarea  rows="5" maxlength="300" placeholder="What is the occassion?"></textarea>
     </div>
+=======
+  <label>Full Name:*</label>
+  <div class="valHidden" id="fnameVal">Please enter your full name</div>
+  <input type="text" name="fname" placeholder="Please fill in your full name">
+  
+
+
+  <label>Email:*</label>
+   <div class="valHidden" id="emailVal">Please enter a valid email address</div>
+  <input type="text" name="email" placeholder="Please enter a valid email address">
+  
+
+  <label>How can I help?</label>
+  <textarea maxlength="200" placeholder="max 200 Characters">
+  
+  </textarea>
+
+<input id="button" type="submit" value="Submit">
+</form>
+>>>>>>> f06ddbe98578111c85bd958cdf8ad255f83607c3
 
   </form>
 
@@ -61,7 +104,10 @@
 </div>
 
 
+<<<<<<< HEAD
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+=======
+>>>>>>> f06ddbe98578111c85bd958cdf8ad255f83607c3
 </body>
 </html>

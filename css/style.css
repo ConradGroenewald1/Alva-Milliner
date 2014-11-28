@@ -789,6 +789,9 @@ button:hover{
     border: solid 2px rgba(225,0,118,0.6);
     color: #ececec;
 }
+.valHidden{
+  display: none;
+}
 
 /*media queries*/
 
