@@ -117,8 +117,9 @@ $(document).ready(function(){
 });
 
 
-//form validation script
-
+/*==================================
+form validation script
+===================================*/
 //full name validation
 function validateName()
   {
