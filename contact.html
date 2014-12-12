@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="eng">
+
 <head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-<title>Web Design Project</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<link href='http://fonts.googleapis.com/css?family=Antic' rel='stylesheet' type='text/css'>
-
-
-
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+  <title>Web Design Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link href='http://fonts.googleapis.com/css?family=Antic' rel='stylesheet' type='text/css'>
 </head>
+
 
 <body id="contact-bg">
 
@@ -36,7 +35,6 @@
 	<form id="mainForm" method="post" action="">
         <h1>Get in Touch!</h1>
             <h2>Feel free to contact me by phone on <a href="tel:+353868215271" rel:"external">+353868215271</a></h2>
-
     <div class="inputs">  
       <label>Full Name*</label>
         <input type="text" onkeyup="validateName()" id="fullName" placeholder="Please enter your full name">
@@ -44,20 +42,20 @@
     </div>
   
     <div class="inputs"> 
-      <label>Email address*</label>
+        <label>Email address*</label>
         <input type="text"  onkeyup="validateEmail()" id="email" placeholder="Enter a valid email address">
       <span id="emailPrompt"></span>
     </div>
     
     <div class="inputs"> 
-      <label>How can I help?</label>
-      <textarea  rows="5" maxlength="300" placeholder="What is the occassion?"></textarea>
+        <label>How can I help?</label>
+        <textarea  rows="5" maxlength="300" placeholder="What is the occassion?"></textarea>
     </div>
 
   </form>
 
     <button type="submit" onclick="ValidateForm()">Submit Form</button><br /><br />
-    <span id="commentPrompt"></span>
+      <span id="commentPrompt"></span>
 </div>
 
 

@@ -93,9 +93,22 @@ nav ul{
 nav ul li{
   	display: inline-block;
   	padding-right: 50px;
+    transition:All 0.9263s ease;
+-webkit-transition:All 0.9263s ease;
+-moz-transition:All 0.9263s ease;
+-o-transition:All 0.9263s ease;
+transform:  scale(1)  translate(10px);
+-webkit-transform:  scale(1)  translate(10px);
+-moz-transform:  scale(1)  translate(10px);
+-o-transform:  scale(1)  translate(10px);
+-ms-transform: scale(1)  translate(10px);
 }
 nav a{color: #ececec !important; text-decoration: none !important;}
-nav a:hover{ position: relative; bottom: 7px;}
+nav li:hover{ transform:  scale(1.1)  translate(0px);
+-webkit-transform:  scale(1.1)  translate(0px);
+-moz-transform:  scale(1.1)  translate(0px);
+-o-transform:  scale(1.1)  translate(0px);
+-ms-transform:  scale(1.1)  translate(0px);}
 
 
 
