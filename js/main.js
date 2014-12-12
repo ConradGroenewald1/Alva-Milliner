@@ -168,6 +168,9 @@ function ValidateForm()
     producePrompt("Form Must Be Valid To Submit", "commentPrompt", "#FF4940");
     setTimeout(function(){jsHide("commentPrompt");}, 2000);
   }
+  else{
+    document.forms["mainForm"].submit();
+  }
 }
 
 
